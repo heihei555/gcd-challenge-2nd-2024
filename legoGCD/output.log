@@ -1,0 +1,52 @@
+nohup: ignoring input
+2024-08-21 21:55:46.754 | INFO     | __main__:<module>:285 - Using evaluation function v2 to print results
+Experiment saved to: dev_outputs/legogcd_cub/log/cub_LegoGCD_(21.08.2024_|_46.732)
+['legogcd_cub']
+Namespace(batch_size=256, num_workers=8, eval_funcs=['v2'], warmup_model_dir=None, dataset_name='cub', prop_train_labels=0.5, use_ssb_splits=True, grad_from_block=23, lr=0.10001, thr=0.7, gamma=0.1, momentum=0.9, weight_decay=5e-05, epochs=200, exp_root='dev_outputs', transform='imagenet', sup_weight=0.2, n_views=2, memax_weight=2, warmup_teacher_temp=0.07, teacher_temp=0.04, warmup_teacher_temp_epochs=30, fp16=False, print_freq=10, exp_name='cub_LegoGCD', masked_qhat=False, qhat_m=0.999, e_cutoff=-5.4, use_marginal_loss=False, tau=0.4, image_size=224, train_classes=[150, 70, 34, 178, 199, 131, 129, 147, 134, 11, 26, 93, 95, 121, 123, 99, 149, 167, 18, 31, 69, 198, 116, 158, 126, 17, 5, 179, 111, 163, 184, 81, 174, 42, 53, 89, 77, 55, 23, 48, 43, 44, 56, 28, 193, 143, 0, 176, 84, 15, 38, 154, 141, 190, 172, 124, 189, 19, 80, 157, 12, 9, 79, 30, 94, 67, 197, 97, 168, 137, 119, 76, 98, 88, 40, 106, 171, 87, 166, 186, 27, 51, 144, 135, 161, 64, 177, 7, 146, 61, 50, 162, 133, 82, 39, 74, 72, 91, 196, 136], unlabeled_classes=[29, 110, 3, 8, 13, 58, 142, 25, 145, 63, 59, 65, 24, 140, 120, 32, 114, 107, 160, 130, 118, 101, 115, 128, 117, 71, 156, 112, 36, 122, 104, 102, 90, 125, 152, 195, 132, 83, 22, 192, 153, 175, 191, 155, 49, 194, 73, 66, 170, 151, 169, 96, 103, 37, 181, 127, 78, 21, 10, 164, 62, 2, 183, 85, 45, 60, 92, 185, 20, 159, 173, 148, 1, 57, 113, 165, 52, 109, 14, 4, 180, 6, 182, 68, 33, 108, 46, 35, 75, 188, 187, 100, 47, 105, 41, 86, 16, 54, 139, 138], num_labeled_classes=100, num_unlabeled_classes=100, logger=<loguru.logger handlers=[(id=0, level=10, sink=<stderr>), (id=1, level=10, sink='dev_outputs/legogcd_cub/log/cub_LegoGCD_(21.08.2024_|_46.732)/log.txt')]>, log_dir='dev_outputs/legogcd_cub/log/cub_LegoGCD_(21.08.2024_|_46.732)', model_dir='dev_outputs/legogcd_cub/log/cub_LegoGCD_(21.08.2024_|_46.732)/checkpoints', model_path='dev_outputs/legogcd_cub/log/cub_LegoGCD_(21.08.2024_|_46.732)/checkpoints/model.pt', writer=<torch.utils.tensorboard.writer.SummaryWriter object at 0x7fdc96df2590>)
+Traceback (most recent call last):
+  File "/home/pod/miniconda3/lib/python3.10/urllib/request.py", line 1348, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "/home/pod/miniconda3/lib/python3.10/http/client.py", line 1276, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/home/pod/miniconda3/lib/python3.10/http/client.py", line 1322, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/home/pod/miniconda3/lib/python3.10/http/client.py", line 1271, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/home/pod/miniconda3/lib/python3.10/http/client.py", line 1031, in _send_output
+    self.send(msg)
+  File "/home/pod/miniconda3/lib/python3.10/http/client.py", line 969, in send
+    self.connect()
+  File "/home/pod/miniconda3/lib/python3.10/http/client.py", line 1441, in connect
+    super().connect()
+  File "/home/pod/miniconda3/lib/python3.10/http/client.py", line 940, in connect
+    self.sock = self._create_connection(
+  File "/home/pod/miniconda3/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/home/pod/miniconda3/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+TimeoutError: [Errno 110] Connection timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pod/ZCC/legoGCD/train_cub.py", line 296, in <module>
+    backbone = torch.hub.load('facebookresearch/dinov2', 'dinov2_vitl14')
+  File "/home/pod/miniconda3/lib/python3.10/site-packages/torch/hub.py", line 537, in load
+    repo_or_dir = _get_cache_or_reload(repo_or_dir, force_reload, trust_repo, "load",
+  File "/home/pod/miniconda3/lib/python3.10/site-packages/torch/hub.py", line 180, in _get_cache_or_reload
+    repo_owner, repo_name, ref = _parse_repo_info(github)
+  File "/home/pod/miniconda3/lib/python3.10/site-packages/torch/hub.py", line 133, in _parse_repo_info
+    with urlopen(f"https://github.com/{repo_owner}/{repo_name}/tree/main/"):
+  File "/home/pod/miniconda3/lib/python3.10/urllib/request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+  File "/home/pod/miniconda3/lib/python3.10/urllib/request.py", line 519, in open
+    response = self._open(req, data)
+  File "/home/pod/miniconda3/lib/python3.10/urllib/request.py", line 536, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+  File "/home/pod/miniconda3/lib/python3.10/urllib/request.py", line 496, in _call_chain
+    result = func(*args)
+  File "/home/pod/miniconda3/lib/python3.10/urllib/request.py", line 1391, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+  File "/home/pod/miniconda3/lib/python3.10/urllib/request.py", line 1351, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno 110] Connection timed out>
